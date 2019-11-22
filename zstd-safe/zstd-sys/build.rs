@@ -105,10 +105,6 @@ fn compile_zstd() {
     // Hide symbols from resulting library,
     // so we can be used with another zstd-linking lib.
     // See https://github.com/gyscos/zstd-rs/issues/58
-    config.flag("-fvisibility=hidden");
-    config.define("ZSTDLIB_VISIBILITY", Some(""));
-    config.define("ZDICTLIB_VISIBILITY", Some(""));
-    config.define("ZSTDERRORLIB_VISIBILITY", Some(""));
 
     set_pthread(&mut config);
     set_legacy(&mut config);
